@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  	<style>
+ 	@font-face{
+		font-family:"imooc-icon";
+			src:url("__FONTS__/icomoon.eot?") format("embedded-opentype"),
+			url("__FONTS__/icomoon.eot") format("embedded-opentype"),
+			url("__FONTS__/icomoon.woff") format("woff"),
+			url("__FONTS__/icomoon.ttf") format("truetype"),
+			url("__FONTS__/icomoon.svg") format("svg");
+      }
+
+    	#username{
+      		width:350px;
+        	border:1px solid #ccc;
+      	}
+      	li em{
+        	font-family:"imooc-icon";
+			font-size:1em;
+			color:#000;  
+          	font-style: normal;
+      	}
+      	li span{
+        	color:red;
+      	}
+      	ul,li{
+          	margin:0;
+          	padding:0;
+          	list-style-type:none;
+          	color:#444;
+          	cursor:Pointer;
+      	}
+		.searchData{
+        	float:right;
+          	margin-right:10px;
+          	font-size:1em;
+      	}
+      	.searchData:hover{
+        	color:red;
+          	font-size:1.2em;
+      	}
+      	#username .li1{
+          	background-color:#afddfa;
+          	min-height:30px;
+        	line-height:30px;
+          	border-top:1px solid #929a9f;
+      	}
+      	#username .li2{
+          	background-color:#cee8f9;
+          	min-height:30px;
+          	line-height:30px;
+          	text-indent:2em;
+          	display:none;
+          	border-top:1px solid #929a9f;
+      	}
+    
+    </style>
+    <script>
+      	function clickme(){
+    		alert(document.getElementById("main").innerHTML);
+        }
+      	function nextUser(obj,m){
+          	var obj_name="parent"+m;
+          	var x = document.getElementsByClassName(obj_name);
+          	var i;
+          
+			for (i = 0; i < x.length; i++) {
+              	if(x[i].style.display == "block"){
+              		x[i].style.display = "none";
+                  	
+                }else{
+                 	x[i].style.display = "block";
+                }
+			}
+        }
+    </script>
+  </head>
+  <body>
+    <div id="main">
+        <div id='username'>
+            {$user}
+        </div>
+     </div>
+     <input type="button" onclick="clickme()" value="点击我">
+  </body>
+</html>
